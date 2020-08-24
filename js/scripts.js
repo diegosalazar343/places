@@ -40,3 +40,14 @@ Places.prototype.vacation = function (id) {
   };
   return false;
 }
+
+// User Interface Logic
+let places = new Places ();
+
+$(document).ready(function() {
+  $("form#new-city").submit(function(event) {
+    event.preventDefault();
+    const inputtedCountry = $("input#new-country").val();
+    const inputtedCity = $("input#new-city").val();
+  }
+}
