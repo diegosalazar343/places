@@ -1,5 +1,5 @@
 // Business Logic for places
-function Places(country, city, landmarks, time of year) {
+function Places(country, city, landmarks, timeOfYear) {
   this.country = country;
   this.city = city;
   this.landmarks = landmarks;
@@ -24,13 +24,9 @@ let vanc = { name: "Vancouver", timeOfYear: "Fall"};
 let vict = { name: "Victoria", timeOfYear: "Fall"};
 
 
-let usa = {name: "USA", cities:[haw, jun, la, phnx, pdx, sd, sfo, sea] S};
+let usa = {name: "USA", cities:[haw, jun, la, phnx, pdx, sd, sfo, sea] };
 let can = {name: "Canada", citites: [vanc, vict] };
 let mex = {name: "Italy", cities: [flor, rom] };
-
-usa.citites.forEach(function(city) {
-  return ("Let's learn about" + city.name + "!");
-});
 
 Places.prototype.vacation = function (id) {
   for (let i = 0; i < this.vacation.length; i++) {
@@ -49,5 +45,8 @@ $(document).ready(function() {
     event.preventDefault();
     const inputtedCountry = $("input#new-country").val();
     const inputtedCity = $("input#new-city").val();
-  }
-}
+    const inputtedTimeOfYear = $("input#new-time-of-year").val();
+    let newCity = new Places(inputtedCountry, inputtedCity, inputtedTimeOfYear);
+    places.addCity(newCity);
+  });
+});
